@@ -5,9 +5,28 @@ This is a learning project from the Frontend Web Development course of the <a hr
 <b>IMPORTANT:</b> Please note that learning projects focus on the given tasks. It is therefore possible that some functions do not work or are not scripted.
 <h3>Table of Contents</h3>
 
+- <a href="#features">Features</a>
 - <a href="#preview">Preview</a>
 - <a href="#installation">Installation</a>
 - <a href="#license">License</a>
+
+<h2 id="features">Features</h2>
+Here is an overview of the most important functions of the project. Click on the summary to expand.<br>
+
+<br>
+<details><summary><b>Available Languages</b></summary>
+
+  - [X] German
+  
+</details>
+
+<details><summary><b>Functionality</b></summary>
+  
+- [X] Navigating through images is possible
+- [X] More images can be added to the array `images` in script.js
+- [X] Responsive Webdesign
+  
+</details>
 
 <h2 id="preview">Preview</h2>
 
