@@ -16,38 +16,53 @@ Here is an overview of the most important functions of the project. Click on the
 <br>
 <details><summary><b>Available Languages</b></summary>
 
-  - [X] German
+:heavy_check_mark: German <br>
   
 </details>
 
 <details><summary><b>Functionality</b></summary>
   
-- [X] Navigating through images is possible
-- [X] More images can be added to the array `images` in script.js
-- [X] Responsive Webdesign
+:heavy_check_mark: Navigating through images is possible <br>
+:heavy_check_mark: More images can be added to the array `images` in script.js <br>
+:heavy_check_mark: Responsive Webdesign <br>
   
 </details>
 
 <h2 id="preview">Preview</h2>
 
 ![This is an image](/img/preview/gallery_preview.png)
+
+---
+
 ![This is an image](/img/preview/focus_img_preview.png)
 
 <h2 id="installation">Installation</h2>
 Follow these steps to install/test the project.
 
 <h3 id="requirements">1. Requirements</h3>
-All you need is a web browser like <a href="https://www.google.com/chrome/">Google Chrome</a>, <a href="https://www.mozilla.org/ en-US/firefox/new/">Firefox</a> or <a href="https://www.microsoft.com/en-US/edge">Microsoft Edge</a>.
+All you need is a web browser like one of the following:
+<br>
+<br>
 
-<h3>2. Download the Project</h3>
+<a href="https://www.google.com/chrome/">![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)</a>
+<a href="https://www.mozilla.org/en-US/firefox/new/">![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)</a>
+<a href="https://www.microsoft.com/en-US/edge">![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)</a>
+
+<h3>2. Download the Source</h3>
 Download the source code or clone the repository on your local computer by clicking the <b>Code</b> button.
+<br>
+<br>
 
-![image](https://user-images.githubusercontent.com/55922592/157395376-12b1167d-340d-419d-b490-f8f23679af62.png)
+![readme_installation_1](https://user-images.githubusercontent.com/55922592/161735913-9de1b046-0a0c-448b-80fa-145ee904d8ab.png)
 
 
 <h3>3. Start the Project</h3>
 Navigate to the location on your computer where you downloaded/cloned the code. In the project directory, open the <b>index.html</b> file with a web browser.
+<br>
+<br>
 
-![readme_installation](https://user-images.githubusercontent.com/55922592/157415952-9cfe1da5-0872-4bf1-ad45-1bd942b9f7a9.PNG)
+![readme_installation_2](https://user-images.githubusercontent.com/55922592/161733187-a9ca556c-d21e-4f74-b96d-015082da85d5.png)
 
 <h2 id="license">License</h2>
+
+<a href="https://github.com/LukasVolgger/photo-gallery/blob/main/LICENSE">![APM](https://img.shields.io/apm/l/vim-mode?label=License&style=for-the-badge)</a>
