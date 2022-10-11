@@ -1,42 +1,3 @@
-let images = [
-    './assets/img/berries.jpg',
-    './assets/img/cave.jpg',
-    './assets/img/deer.jpg',
-    './assets/img/fern.jpg',
-    './assets/img/fire.jpg',
-    './assets/img/flower_1.jpg',
-    './assets/img/flower_2.jpg',
-    './assets/img/forest_1.jpg',
-    './assets/img/forest_2.jpg',
-    './assets/img/fox.jpg',
-    './assets/img/honey_bee.jpg',
-    './assets/img/leaf.jpg',
-    './assets/img/leaves_1.jpg',
-    './assets/img/leaves_2.jpg',
-    './assets/img/leaves_3.jpg',
-    './assets/img/leaves_4.jpg',
-    './assets/img/leaves_5.jpg',
-    './assets/img/leaves_6.jpg',
-    './assets/img/lion.jpg',
-    './assets/img/lotus.jpg',
-    './assets/img/moon.jpg',
-    './assets/img/mountain_1.jpg',
-    './assets/img/mountain_2.jpg',
-    './assets/img/mushroom_1.jpg',
-    './assets/img/mushroom_2.jpg',
-    './assets/img/nature.jpg',
-    './assets/img/nettle.jpg',
-    './assets/img/owl.jpg',
-    './assets/img/puma.jpg',
-    './assets/img/raccoon.jpg',
-    './assets/img/spider_web_1.jpg',
-    './assets/img/spider_web_2.jpg',
-    './assets/img/sundew_1.jpg',
-    './assets/img/sundew_2.jpg',
-    './assets/img/swan.jpg',
-    './assets/img/waterfall.jpg'
-];
-
 let totalImages = images.length; // Store the number of all images in a variable
 let actualImage; // Declare a variable to track which image is opened by user
 
@@ -53,7 +14,7 @@ function generateImages() {
         let imgContainer = document.getElementById('img-container');
 
         imgContainer.innerHTML += `
-            <img src="${images[i]}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i]}">
+            <img src="${images[i].path}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i].path}">
         `;
     }
 }

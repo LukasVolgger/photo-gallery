@@ -25,7 +25,7 @@ function generateStaticHTML() {
 
 function generateFocusImage(image) {
     return `
-        <img src="${images[image]}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
+        <img src="${images[image].path}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
         <div class="icon-container close-icon" onclick="closeImageFocus()">
             <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
         </div>
