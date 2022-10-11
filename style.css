@@ -116,6 +116,11 @@ main {
     gap: 16px;
 }
 
+.gallery-img-container {
+    display: flex;
+    position: relative;
+}
+
 .gallery-img {
     flex: 1;
     object-fit: cover;
@@ -128,6 +133,14 @@ main {
 .gallery-img:hover {
     filter: brightness(1.5);
     border: solid 1px silver;
+}
+
+.tags-container {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
 }
 
 .focus-img {
@@ -230,7 +243,8 @@ main {
     .header-title-text {
         font-size: 48px;
     }
-    .gallery-img {
+    .gallery-img,
+    .gallery-img-container {
         width: calc(100% - 32px);
         height: 180px;
     }
@@ -258,7 +272,8 @@ main {
     .header-title-text {
         font-size: 58px;
     }
-    .gallery-img {
+    .gallery-img,
+    .gallery-img-container {
         width: calc(50% - 32px);
         height: 140px;
     }
@@ -282,7 +297,8 @@ main {
     .header-title {
         flex-direction: row;
     }
-    .gallery-img {
+    .gallery-img,
+    .gallery-img-container {
         width: calc(33% - 32px);
         height: 180px;
     }
@@ -302,7 +318,9 @@ main {
     .header-title-text {
         font-size: 76px;
     }
-    .gallery-img {
+    .gallery-img,
+    .gallery-img-container {
+        width: calc(25% - 32px);
         height: 280px;
     }
     .icon-container-up {
@@ -315,6 +333,11 @@ main {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1200px) {
+    .gallery-img,
+    .gallery-img-container {
+        width: calc(20% - 32px);
+        height: 280px;
+    }
     .icon-container {
         width: 76px;
         height: 76px;

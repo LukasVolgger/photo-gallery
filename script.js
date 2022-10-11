@@ -14,8 +14,21 @@ function generateImages() {
         let imgContainer = document.getElementById('img-container');
 
         imgContainer.innerHTML += `
+        <div class="gallery-img-container">
             <img src="${images[i].path}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i].path}">
+            <div class="tags-container" id="tags-container-${i}"></div>
+        </div>
         `;
+
+        generateImageTags(i);
+    }
+}
+
+function generateImageTags(i) {
+    let container = document.getElementById(`tags-container-${i}`);
+
+    for (let j = 0; j < images[i].tags.length; j++) {
+        container.innerHTML += generateImageTagsHTML(i, j);
     }
 }
 
@@ -73,4 +86,8 @@ function shuffle(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

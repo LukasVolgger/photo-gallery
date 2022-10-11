@@ -37,3 +37,9 @@ function generateFocusImage(image) {
         </div>
     `;
 }
+
+function generateImageTagsHTML(i, j) {
+    return `
+        <span>${capitalizeFirstLetter(images[i].tags[j])}</span>
+    `;
+}
