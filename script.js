@@ -1,40 +1,40 @@
 let images = [
-    './img/berries.jpg',
-    './img/cave.jpg',
-    './img/deer.jpg',
-    './img/fern.jpg',
-    './img/fire.jpg',
-    './img/flower_1.jpg',
-    './img/flower_2.jpg',
-    './img/forest_1.jpg',
-    './img/forest_2.jpg',
-    './img/fox.jpg',
-    './img/honey_bee.jpg',
-    './img/leaf.jpg',
-    './img/leaves_1.jpg',
-    './img/leaves_2.jpg',
-    './img/leaves_3.jpg',
-    './img/leaves_4.jpg',
-    './img/leaves_5.jpg',
-    './img/leaves_6.jpg',
-    './img/lion.jpg',
-    './img/lotus.jpg',
-    './img/moon.jpg',
-    './img/mountain_1.jpg',
-    './img/mountain_2.jpg',
-    './img/mushroom_1.jpg',
-    './img/mushroom_2.jpg',
-    './img/nature.jpg',
-    './img/nettle.jpg',
-    './img/owl.jpg',
-    './img/puma.jpg',
-    './img/raccoon.jpg',
-    './img/spider_web_1.jpg',
-    './img/spider_web_2.jpg',
-    './img/sundew_1.jpg',
-    './img/sundew_2.jpg',
-    './img/swan.jpg',
-    './img/waterfall.jpg'
+    './assets/img/berries.jpg',
+    './assets/img/cave.jpg',
+    './assets/img/deer.jpg',
+    './assets/img/fern.jpg',
+    './assets/img/fire.jpg',
+    './assets/img/flower_1.jpg',
+    './assets/img/flower_2.jpg',
+    './assets/img/forest_1.jpg',
+    './assets/img/forest_2.jpg',
+    './assets/img/fox.jpg',
+    './assets/img/honey_bee.jpg',
+    './assets/img/leaf.jpg',
+    './assets/img/leaves_1.jpg',
+    './assets/img/leaves_2.jpg',
+    './assets/img/leaves_3.jpg',
+    './assets/img/leaves_4.jpg',
+    './assets/img/leaves_5.jpg',
+    './assets/img/leaves_6.jpg',
+    './assets/img/lion.jpg',
+    './assets/img/lotus.jpg',
+    './assets/img/moon.jpg',
+    './assets/img/mountain_1.jpg',
+    './assets/img/mountain_2.jpg',
+    './assets/img/mushroom_1.jpg',
+    './assets/img/mushroom_2.jpg',
+    './assets/img/nature.jpg',
+    './assets/img/nettle.jpg',
+    './assets/img/owl.jpg',
+    './assets/img/puma.jpg',
+    './assets/img/raccoon.jpg',
+    './assets/img/spider_web_1.jpg',
+    './assets/img/spider_web_2.jpg',
+    './assets/img/sundew_1.jpg',
+    './assets/img/sundew_2.jpg',
+    './assets/img/swan.jpg',
+    './assets/img/waterfall.jpg'
 ];
 
 let totalImages = images.length; // Store the number of all images in a variable
@@ -55,7 +55,7 @@ function generateStaticHTML() {
             </div>
             <div class="header-subcontainer">
                 <div id="search-bar-container">
-                    <a href="#" class="search-bar-link"><img src="./img/icons/search.svg" alt="search" id="search-icon" class="icons"></a>
+                    <a href="#" class="search-bar-link"><img src="./assets/img/icons/search.svg" alt="search" id="search-icon" class="icons"></a>
                     <input type="text" placeholder="Search" class="element-height" id="search-bar">
                 </div>
             </div>
@@ -63,7 +63,7 @@ function generateStaticHTML() {
         <main id="main" class="border-spacing">
             <div id="img-container" class="img-container">
                 <a href="#" id="icon-container-up" class="icon-container-up">
-                    <img src="./img/icons/double_up_arrow.svg" alt="Arrow Up" title="Up">
+                    <img src="./assets/img/icons/double_up_arrow.svg" alt="Arrow Up" title="Up">
                 </a>
                 <div id="focus-img-container" class="d-none focus-img-container"></div>
             </div>
@@ -127,13 +127,13 @@ function generateFocusImage(image) {
     return `
         <img src="${images[image]}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
         <div class="icon-container close-icon" onclick="closeImageFocus()">
-            <img src="./img/icons/close.svg" alt="Close icon" title="Close">
+            <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
         </div>
         <div class="icon-container left-arrow-icon" onclick="nextImageLeft()">
-            <img src="./img/icons/left_arrow.svg" alt="Arrow Left" title="Left">
+            <img src="./assets/img/icons/left_arrow.svg" alt="Arrow Left" title="Left">
         </div>
         <div class="icon-container right-arrow-icon" onclick="nextImageRight()">
-            <img src="./img/icons/right_arrow.svg" alt="Arrow Right" title="Right">
+            <img src="./assets/img/icons/right_arrow.svg" alt="Arrow Right" title="Right">
         </div>
     `;
 }
