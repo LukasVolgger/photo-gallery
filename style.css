@@ -186,7 +186,7 @@ main {
     z-index: 2;
 }
 
-.wrapper {
+.focus-img-wrapper {
     position: relative;
     display: flex;
     justify-content: center;

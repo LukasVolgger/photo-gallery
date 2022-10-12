@@ -200,6 +200,15 @@ function closeSearch() {
 }
 
 /**
+ * Scrolls to the top of the page
+ */
+function scrollToTop() {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 200)
+}
+
+/**
  * Randomly arranges the contents of an array
  * @param {Array} array 
  */

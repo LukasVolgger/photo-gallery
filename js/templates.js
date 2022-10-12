@@ -19,9 +19,9 @@ function generateStaticHTML() {
         </header>
         <main id="main" class="border-spacing">
             <div id="img-container" class="img-container"></div>
-            <a href="#" id="icon-container-up" class="icon-container-up">
+            <button id="icon-container-up" class="btn icon-container-up" onclick="scrollToTop()">
                     <img src="./assets/img/icons/double_up_arrow.svg" alt="Arrow Up" title="Up">
-            </a>
+            </button>
             <div id="focus-img-container" class="d-none focus-img-container"></div>
         </main>
     `;
@@ -67,18 +67,18 @@ function generateFilteredImgHTML(i) {
  */
 function generateFocusImage(image) {
     return `
-        <div class="wrapper">
+        <div class="focus-img-wrapper">
             <img src="${images[image].path}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
             <div class="tags-container" id="tags-container-${image}"></div>
-            <div class="icon-container close-icon" onclick="closeImageFocus()">
+            <button class="btn icon-container close-icon" onclick="closeImageFocus()">
                 <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
-            </div>
-            <div class="icon-container left-arrow-icon" onclick="nextImageLeft()">
+            </button>
+            <button class="btn icon-container left-arrow-icon" onclick="nextImageLeft()">
                 <img src="./assets/img/icons/left_arrow.svg" alt="Arrow Left" title="Left">
-            </div>
-            <div class="icon-container right-arrow-icon" onclick="nextImageRight()">
+            </button>
+            <button class="btn icon-container right-arrow-icon" onclick="nextImageRight()">
                 <img src="./assets/img/icons/right_arrow.svg" alt="Arrow Right" title="Right">
-            </div>
+            </button>
         </div>
     `;
 }
@@ -89,18 +89,18 @@ function generateFocusImage(image) {
  */
 function generateFilteredFocusImage(image) {
     return `
-        <div class="wrapper">
+        <div class="focus-img-wrapper">
             <img src="${filteredImages[image].path}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
             <div class="tags-container" id="tags-container-${image}"></div>
-            <div class="icon-container close-icon" onclick="closeImageFocus()">
+            <button class="btn icon-container close-icon" onclick="closeImageFocus()">
                 <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
-            </div>
-            <div class="icon-container left-arrow-icon" onclick="nextFilteredImageLeft()">
+            </button>
+            <button class="btn icon-container left-arrow-icon" onclick="nextFilteredImageLeft()">
                 <img src="./assets/img/icons/left_arrow.svg" alt="Arrow Left" title="Left">
-            </div>
-            <div class="icon-container right-arrow-icon" onclick="nextFilteredImageRight()">
+            </button>
+            <button class="btn icon-container right-arrow-icon" onclick="nextFilteredImageRight()">
                 <img src="./assets/img/icons/right_arrow.svg" alt="Arrow Right" title="Right">
-            </div>
+            </button>
         </div>
     `;
 }
