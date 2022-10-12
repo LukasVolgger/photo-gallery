@@ -150,6 +150,7 @@ main {
 
 .tags-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     position: absolute;
     left: 16px;

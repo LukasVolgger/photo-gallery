@@ -1,11 +1,11 @@
 let images = [{
         path: './assets/img/gallery/berries.jpg',
-        tags: ['nature', 'plants', 'bush', 'berries']
+        tags: ['nature', 'plants', 'bush', 'berries', 'green', 'dark']
     },
 
     {
         path: './assets/img/gallery/cave.jpg',
-        tags: ['cave']
+        tags: ['nature', 'landscape', 'cave']
     },
     {
         path: './assets/img/gallery/deer.jpg',
@@ -13,19 +13,19 @@ let images = [{
     },
     {
         path: './assets/img/gallery/fern.jpg',
-        tags: ['nature', 'plants', 'fern']
+        tags: ['nature', 'plants', 'fern', 'green', 'dark']
     },
     {
         path: './assets/img/gallery/fire.jpg',
-        tags: ['fire']
+        tags: ['fire', 'dark']
     },
     {
         path: './assets/img/gallery/flower_1.jpg',
-        tags: ['nature', 'plants', 'flower']
+        tags: ['nature', 'plants', 'flower', 'purple', 'dark']
     },
     {
         path: './assets/img/gallery/flower_2.jpg',
-        tags: ['nature', 'plants', 'flower']
+        tags: ['nature', 'plants', 'flower', 'yellow', 'dark']
     },
     {
         path: './assets/img/gallery/fox.jpg',
@@ -33,7 +33,7 @@ let images = [{
     },
     {
         path: './assets/img/gallery/honey_bee.jpg',
-        tags: ['nature', 'animals', 'honey bee']
+        tags: ['nature', 'animals', 'honey bee', 'dark']
     },
     {
         path: './assets/img/gallery/leaf.jpg',
@@ -41,49 +41,46 @@ let images = [{
     },
     {
         path: './assets/img/gallery/leaves_1.jpg',
-        tags: ['nature', 'plants', 'leaves']
+        tags: ['nature', 'plants', 'leaves', 'green', 'dark']
     }, {
         path: './assets/img/gallery/leaves_2.jpg',
-        tags: ['nature', 'plants', 'leaves']
+        tags: ['nature', 'plants', 'leaves', 'green', 'dark']
     }, {
         path: './assets/img/gallery/leaves_3.jpg',
-        tags: ['nature', 'plants', 'leaves']
+        tags: ['nature', 'plants', 'leaves', 'green', 'dark']
     }, {
         path: './assets/img/gallery/leaves_4.jpg',
-        tags: ['nature', 'plants', 'leaves']
+        tags: ['nature', 'plants', 'leaves', 'green']
     }, {
         path: './assets/img/gallery/leaves_5.jpg',
-        tags: ['nature', 'plants', 'leaves']
+        tags: ['nature', 'plants', 'leaves', 'green', 'dark']
     }, {
         path: './assets/img/gallery/leaves_6.jpg',
-        tags: ['nature', 'plants', 'leaves']
+        tags: ['nature', 'plants', 'leaves', 'green']
     }, {
         path: './assets/img/gallery/leaves_7.jpg',
-        tags: ['nature', 'plants', 'leaves']
+        tags: ['nature', 'plants', 'leaves', 'green']
     },
     {
         path: './assets/img/gallery/lion.jpg',
-        tags: ['animals', 'lion']
+        tags: ['animals', 'lion', 'dark']
     },
     {
         path: './assets/img/gallery/lotus.jpg',
         tags: ['nature', 'plants', 'lotus', 'flower']
     }, {
         path: './assets/img/gallery/moon.jpg',
-        tags: ['moon']
+        tags: ['landscape', 'moon', 'dark']
     },
     {
         path: './assets/img/gallery/moss.jpg',
-        tags: ['nature', 'plants', 'moss']
+        tags: ['nature', 'plants', 'moss', 'green']
     }, {
         path: './assets/img/gallery/moss_2.jpg',
-        tags: ['nature', 'plants', 'moss']
+        tags: ['nature', 'plants', 'moss', 'green', 'dark']
     },
     {
         path: './assets/img/gallery/mountain_1.jpg',
-        tags: ['nature', 'landscape', 'mountains']
-    }, {
-        path: './assets/img/gallery/mountain_2.jpg',
         tags: ['nature', 'landscape', 'mountains']
     },
     {
@@ -91,37 +88,41 @@ let images = [{
         tags: ['nature', 'plants', 'mushrooms']
     }, {
         path: './assets/img/gallery/mushroom_2.jpg',
-        tags: ['nature', 'plants', 'mushrooms']
+        tags: ['nature', 'plants', 'mushrooms', 'dark']
+    },
+    {
+        path: './assets/img/gallery/mushroom_3.jpg',
+        tags: ['nature', 'plants', 'mushrooms', 'dark']
     },
     {
         path: './assets/img/gallery/nettle.jpg',
-        tags: ['nature', 'plants', 'nettle']
+        tags: ['nature', 'plants', 'nettle', 'green', 'dark']
     },
     {
         path: './assets/img/gallery/owl.jpg',
-        tags: ['nature', 'animals', 'owl']
+        tags: ['nature', 'animals', 'owl', 'dark']
     },
     {
         path: './assets/img/gallery/puma.jpg',
-        tags: ['nature', 'animals', 'puma']
+        tags: ['nature', 'animals', 'puma', 'dark']
     },
     {
         path: './assets/img/gallery/raccoon.jpg',
-        tags: ['nature', 'animals', 'raccoon'],
+        tags: ['nature', 'animals', 'raccoon', 'dark'],
     },
     {
         path: './assets/img/gallery/spider_web_1.jpg',
-        tags: ['nature', 'spider web']
+        tags: ['nature', 'spider web', 'drops', 'dark']
     }, {
         path: './assets/img/gallery/spider_web_2.jpg',
-        tags: ['nature', 'spider web']
+        tags: ['nature', 'spider web', 'drops', 'dark']
     },
     {
         path: './assets/img/gallery/sundew_1.jpg',
-        tags: ['nature', 'plants', 'sundew']
+        tags: ['nature', 'plants', 'sundew', 'drops']
     }, {
         path: './assets/img/gallery/sundew_2.jpg',
-        tags: ['nature', 'plants', 'sundew']
+        tags: ['nature', 'plants', 'sundew', 'drops']
     },
     {
         path: './assets/img/gallery/swan.jpg',
@@ -129,7 +130,7 @@ let images = [{
     },
     {
         path: './assets/img/gallery/waterfall.jpg',
-        tags: ['nature', 'landscape', 'waterfall']
+        tags: ['nature', 'landscape', 'waterfall', 'water']
     }
 ];
 
