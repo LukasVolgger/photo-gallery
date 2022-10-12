@@ -1,3 +1,7 @@
+/**
+ * Generates HTML code
+ * @returns HTML
+ */
 function generateStaticHTML() {
     return `
         <header class="border-spacing">
@@ -23,6 +27,10 @@ function generateStaticHTML() {
     `;
 }
 
+/**
+ * Generates HTML code
+ * @returns HTML
+ */
 function generateGalleryImgHTML(i) {
     return `
         <div class="gallery-img-container">
@@ -31,12 +39,20 @@ function generateGalleryImgHTML(i) {
     `;
 }
 
+/**
+ * Generates HTML code
+ * @returns HTML
+ */
 function generateImageTagsHTML(i, j) {
     return `
         <span class="tag">${capitalizeFirstLetter(images[i].tags[j])}</span>
     `;
 }
 
+/**
+ * Generates HTML code
+ * @returns HTML
+ */
 function generateFilteredImgHTML(i) {
     return `
         <div class="gallery-img-container">
@@ -45,6 +61,10 @@ function generateFilteredImgHTML(i) {
     `;
 }
 
+/**
+ * Generates HTML code
+ * @returns HTML
+ */
 function generateFocusImage(image) {
     return `
         <div class="wrapper">
@@ -63,6 +83,10 @@ function generateFocusImage(image) {
     `;
 }
 
+/**
+ * Generates HTML code
+ * @returns HTML
+ */
 function generateFilteredFocusImage(image) {
     return `
         <div class="wrapper">
@@ -81,6 +105,10 @@ function generateFilteredFocusImage(image) {
     `;
 }
 
+/**
+ * Generates HTML code
+ * @returns HTML
+ */
 function generateNoImagesFoundHTML() {
     return `
         <div class="not-found-container">

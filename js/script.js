@@ -1,14 +1,20 @@
-let totalImages = images.length; // Store the number of all images in a variable
-let actualImage; // Declare a variable to track which image is opened by user
-let totalFilteredImages; // Store the number of all images in a variable
-let actualFilteredImage; // Declare a variable to track which image is opened by user
+let totalImages = images.length;
+let actualImage;
+let totalFilteredImages;
+let actualFilteredImage;
 
+/**
+ * Generates the static HTML page and the gallery images
+ */
 function render() {
     let content = document.getElementById('content');
     content.innerHTML = generateStaticHTML();
     generateImages();
 }
 
+/**
+ * Arranges the images in random order and generates each individual image
+ */
 function generateImages() {
     shuffle(images); // Randomize all images
 
@@ -18,6 +24,10 @@ function generateImages() {
     }
 }
 
+/**
+ * Generates the images tags
+ * @param {integer} i Image counter
+ */
 function generateImageTags(i) {
     let container = document.getElementById(`tags-container-${i}`);
 
@@ -26,41 +36,55 @@ function generateImageTags(i) {
     }
 }
 
-function openImage(image) {
+/**
+ * Opens the selected image and shows it in full screen
+ * @param {integer} i Image counter 
+ */
+function openImage(i) {
     showImageFocus();
-    actualImage = image; // Set the actualImage variable to the given parameter number = true actual image
+    actualImage = i; // Set the actualImage variable to the given parameter number = true actual image
 
     let focusContainer = document.getElementById('focus-img-container');
-    focusContainer.innerHTML = ''; // Clear focus container
-    focusContainer.innerHTML += generateFocusImage(image);
+    focusContainer.innerHTML = '';
+    focusContainer.innerHTML += generateFocusImage(i);
 
-    generateImageTags(image);
+    generateImageTags(i);
 }
 
-function openFilteredImage(image) {
+/**
+ * Opens the selected image and shows it in full screen
+ * @param {integer} i Image counter 
+ */
+function openFilteredImage(i) {
     showImageFocus();
-    actualFilteredImage = image; // Set the actualImage variable to the given parameter number = true actual image
+    actualFilteredImage = i; // Set the actualImage variable to the given parameter number = true actual image
 
     let focusContainer = document.getElementById('focus-img-container');
-    focusContainer.innerHTML = ''; // Clear focus container
-    focusContainer.innerHTML += generateFilteredFocusImage(image);
+    focusContainer.innerHTML = '';
+    focusContainer.innerHTML += generateFilteredFocusImage(i);
 
-    generateImageTags(image);
+    generateImageTags(i);
 }
 
+/**
+ *  Places the container for the image to be opened over the screen 
+ */
 function showImageFocus() {
     document.getElementById('focus-img-container').classList.remove('d-none'); // Makes container visible
     document.getElementById('icon-container-up').classList.add('d-none'); // Hides scroll-up icon
     document.body.style = 'overflow: hidden'; // Make the body not scrollable as long as focus container is shown
 }
 
+/**
+ * Navigates one image to the left
+ */
 function nextImageLeft() {
     if (actualImage !== 0) { // Avoid that the actualImage variable gets negative
         actualImage--; // actualImage is a positive number and can be decremented
 
         if (actualImage >= 0) { // Check if there are images left
             let focusContainer = document.getElementById('focus-img-container');
-            focusContainer.innerHTML = ''; // Clear the focus container
+            focusContainer.innerHTML = '';
             focusContainer.innerHTML += generateFocusImage(actualImage);
 
             generateImageTags(actualImage);
@@ -68,13 +92,16 @@ function nextImageLeft() {
     }
 }
 
+/**
+ * Navigates one image to the left
+ */
 function nextFilteredImageLeft() {
     if (actualFilteredImage !== 0) { // Avoid that the actualImage variable gets negative
         actualFilteredImage--; // actualImage is a positive number and can be decremented
 
         if (actualFilteredImage >= 0) { // Check if there are images left
             let focusContainer = document.getElementById('focus-img-container');
-            focusContainer.innerHTML = ''; // Clear the focus container
+            focusContainer.innerHTML = '';
             focusContainer.innerHTML += generateFilteredFocusImage(actualFilteredImage);
 
             generateImageTags(actualFilteredImage);
@@ -82,6 +109,9 @@ function nextFilteredImageLeft() {
     }
 }
 
+/**
+ * Navigates one image to the right
+ */
 function nextImageRight() {
     if (actualImage !== totalImages - 1) { // Check to avoid that the actualImage variable gets higher as there are elements in the array (-1 because array starts at 0)
         actualImage++; // actualImage is less than the total images and can be incremented
@@ -95,6 +125,9 @@ function nextImageRight() {
     }
 }
 
+/**
+ * Navigates one image to the right
+ */
 function nextFilteredImageRight() {
     if (actualFilteredImage !== totalFilteredImages - 1) { // Check to avoid that the actualImage variable gets higher as there are elements in the array (-1 because array starts at 0)
         actualFilteredImage++; // actualImage is less than the total images and can be incremented
@@ -108,15 +141,21 @@ function nextFilteredImageRight() {
     }
 }
 
+/**
+ * Closes the overlay of the opened image 
+ */
 function closeImageFocus() {
     let focusContainer = document.getElementById('focus-img-container')
-    focusContainer.innerHTML = ''; // Clear focus container
-    focusContainer.classList.add('d-none'); // Hide focus container
+    focusContainer.innerHTML = ''
+    focusContainer.classList.add('d-none');
 
     document.getElementById('icon-container-up').classList.remove('d-none'); // Show scroll-up icon
     document.body.style = 'overflow: auto'; // Make the body scrollable
 }
 
+/**
+ * Filters all images based on the user input and displays the result
+ */
 function searchFunction() {
     let searchInput = document.getElementById('search-input').value.toLowerCase();
 
@@ -152,11 +191,18 @@ function searchFunction() {
     }
 }
 
+/**
+ * Closes the filtered images and displays the normal gallery
+ */
 function closeSearch() {
     document.getElementById('search-input').value = '';
     render();
 }
 
+/**
+ * Randomly arranges the contents of an array
+ * @param {Array} array 
+ */
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -164,6 +210,11 @@ function shuffle(array) {
     }
 }
 
+/**
+ * Makes the first letter of a string an uppercase letter
+ * @param {string} string 
+ * @returns 
+ */
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
