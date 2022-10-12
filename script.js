@@ -14,10 +14,9 @@ function generateImages() {
         let imgContainer = document.getElementById('img-container');
 
         imgContainer.innerHTML += `
-        <div class="gallery-img-container">
-            <img src="${images[i].path}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i].path}">
-            <div class="tags-container" id="tags-container-${i}"></div>
-        </div>
+            <div class="gallery-img-container">
+                <img src="${images[i].path}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i].path}">
+            </div>
         `;
     }
 }
@@ -70,8 +69,6 @@ function nextImageRight() {
             focusContainer.innerHTML = generateFocusImage(actualImage);
 
             generateImageTags(actualImage);
-        } else {
-            // Nothing should happen
         }
     }
 }
@@ -83,6 +80,36 @@ function closeImageFocus() {
 
     document.getElementById('icon-container-up').classList.remove('d-none'); // Show scroll-up icon
     document.body.style = 'overflow: auto'; // Make the body scrollable
+}
+
+function searchFunction() {
+    let searchInput = document.getElementById('search-input').value.toLowerCase();
+
+    if (!searchInput.length == 0) {
+        // Get container and clear it first
+        let container = document.getElementById('img-container');
+        container.innerHTML = '';
+
+        // Iterate through array and generate items if the array includes the searchInput
+        for (let i = 0; i < images.length; i++) {
+            for (let j = 0; j < images[i].tags.length; j++) {
+                if (images[i].tags[j].toLowerCase().includes(searchInput)) {
+                    container.innerHTML += `
+                        <div class="gallery-img-container">
+                            <img src="${images[i].path}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i].path}">
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        document.getElementById('close-search-btn').style = 'display: flex'; // Make close btn visible
+    }
+}
+
+function closeSearch() {
+    document.getElementById('search-input').value = '';
+    render();
 }
 
 function shuffle(array) {
