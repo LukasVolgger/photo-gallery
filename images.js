@@ -132,3 +132,5 @@ let images = [{
         tags: ['nature', 'landscape', 'waterfall']
     }
 ];
+
+let filteredImages = [];

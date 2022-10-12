@@ -1,5 +1,7 @@
 let totalImages = images.length; // Store the number of all images in a variable
 let actualImage; // Declare a variable to track which image is opened by user
+let totalFilteredImages; // Store the number of all images in a variable
+let actualFilteredImage; // Declare a variable to track which image is opened by user
 
 function render() {
     let content = document.getElementById('content');
@@ -12,12 +14,7 @@ function generateImages() {
 
     for (let i = 0; i < totalImages; i++) {
         let imgContainer = document.getElementById('img-container');
-
-        imgContainer.innerHTML += `
-            <div class="gallery-img-container">
-                <img src="${images[i].path}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i].path}">
-            </div>
-        `;
+        imgContainer.innerHTML += generateGalleryImgHTML(i);
     }
 }
 
@@ -36,6 +33,17 @@ function openImage(image) {
     let focusContainer = document.getElementById('focus-img-container');
     focusContainer.innerHTML = ''; // Clear focus container
     focusContainer.innerHTML += generateFocusImage(image);
+
+    generateImageTags(image);
+}
+
+function openFilteredImage(image) {
+    showImageFocus();
+    actualFilteredImage = image; // Set the actualImage variable to the given parameter number = true actual image
+
+    let focusContainer = document.getElementById('focus-img-container');
+    focusContainer.innerHTML = ''; // Clear focus container
+    focusContainer.innerHTML += generateFilteredFocusImage(image);
 
     generateImageTags(image);
 }
@@ -60,6 +68,20 @@ function nextImageLeft() {
     }
 }
 
+function nextFilteredImageLeft() {
+    if (actualFilteredImage !== 0) { // Avoid that the actualImage variable gets negative
+        actualFilteredImage--; // actualImage is a positive number and can be decremented
+
+        if (actualFilteredImage >= 0) { // Check if there are images left
+            let focusContainer = document.getElementById('focus-img-container');
+            focusContainer.innerHTML = ''; // Clear the focus container
+            focusContainer.innerHTML += generateFilteredFocusImage(actualFilteredImage);
+
+            generateImageTags(actualFilteredImage);
+        }
+    }
+}
+
 function nextImageRight() {
     if (actualImage !== totalImages - 1) { // Check to avoid that the actualImage variable gets higher as there are elements in the array (-1 because array starts at 0)
         actualImage++; // actualImage is less than the total images and can be incremented
@@ -69,6 +91,19 @@ function nextImageRight() {
             focusContainer.innerHTML = generateFocusImage(actualImage);
 
             generateImageTags(actualImage);
+        }
+    }
+}
+
+function nextFilteredImageRight() {
+    if (actualFilteredImage !== totalFilteredImages - 1) { // Check to avoid that the actualImage variable gets higher as there are elements in the array (-1 because array starts at 0)
+        actualFilteredImage++; // actualImage is less than the total images and can be incremented
+
+        if (actualFilteredImage < totalFilteredImages) { // Check if there are images left
+            let focusContainer = document.getElementById('focus-img-container');
+            focusContainer.innerHTML = generateFilteredFocusImage(actualFilteredImage);
+
+            generateImageTags(actualFilteredImage);
         }
     }
 }
@@ -86,6 +121,8 @@ function searchFunction() {
     let searchInput = document.getElementById('search-input').value.toLowerCase();
 
     if (!searchInput.length == 0) {
+        filteredImages = [];
+
         // Get container and clear it first
         let container = document.getElementById('img-container');
         container.innerHTML = '';
@@ -94,13 +131,18 @@ function searchFunction() {
         for (let i = 0; i < images.length; i++) {
             for (let j = 0; j < images[i].tags.length; j++) {
                 if (images[i].tags[j].toLowerCase().includes(searchInput)) {
-                    container.innerHTML += `
-                        <div class="gallery-img-container">
-                            <img src="${images[i].path}" id="img-${i}" class="gallery-img" onclick="openImage(${i})" alt="${images[i].path}">
-                        </div>
-                    `;
+                    filteredImages.push(images[i]);
+                } else {
+                    container.innerHTML = generateNoImagesFoundHTML();
                 }
             }
+        }
+
+        totalFilteredImages = filteredImages.length; // Update total images
+
+        // Render filtered images
+        for (let k = 0; k < filteredImages.length; k++) {
+            container.innerHTML += generateFilteredImgHTML(k);
         }
 
         document.getElementById('close-search-btn').style = 'display: flex'; // Make close btn visible
