@@ -26,6 +26,7 @@ function generateStaticHTML() {
 function generateFocusImage(image) {
     return `
         <img src="${images[image].path}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
+        <div class="tags-container" id="tags-container-${image}"></div>
         <div class="icon-container close-icon" onclick="closeImageFocus()">
             <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
         </div>
@@ -40,6 +41,6 @@ function generateFocusImage(image) {
 
 function generateImageTagsHTML(i, j) {
     return `
-        <span>${capitalizeFirstLetter(images[i].tags[j])}</span>
+        <span class="tag">${capitalizeFirstLetter(images[i].tags[j])}</span>
     `;
 }

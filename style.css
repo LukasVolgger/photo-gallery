@@ -119,20 +119,20 @@ main {
 .gallery-img-container {
     display: flex;
     position: relative;
+    cursor: pointer;
+    border: solid 1px transparent;
+    border-radius: 8px;
+}
+
+.gallery-img-container:hover {
+    filter: brightness(1.5);
+    border: solid 1px silver;
 }
 
 .gallery-img {
     flex: 1;
     object-fit: cover;
-    cursor: pointer;
-    border: solid 1px transparent;
     border-radius: 8px;
-    box-sizing: border-box;
-}
-
-.gallery-img:hover {
-    filter: brightness(1.5);
-    border: solid 1px silver;
 }
 
 .tags-container {
@@ -141,9 +141,18 @@ main {
     position: absolute;
     left: 16px;
     bottom: 16px;
+    z-index: 4;
+}
+
+.tag {
+    font-size: 32px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
 }
 
 .focus-img {
+    position: relative;
     max-width: 80vw;
     max-height: 90vh;
     cursor: unset;

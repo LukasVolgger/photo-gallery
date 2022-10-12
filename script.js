@@ -19,8 +19,6 @@ function generateImages() {
             <div class="tags-container" id="tags-container-${i}"></div>
         </div>
         `;
-
-        generateImageTags(i);
     }
 }
 
@@ -39,6 +37,8 @@ function openImage(image) {
     let focusContainer = document.getElementById('focus-img-container');
     focusContainer.innerHTML = ''; // Clear focus container
     focusContainer.innerHTML += generateFocusImage(image);
+
+    generateImageTags(image);
 }
 
 function showImageFocus() {
@@ -55,6 +55,8 @@ function nextImageLeft() {
             let focusContainer = document.getElementById('focus-img-container');
             focusContainer.innerHTML = ''; // Clear the focus container
             focusContainer.innerHTML += generateFocusImage(actualImage);
+
+            generateImageTags(actualImage);
         }
     }
 }
@@ -66,6 +68,8 @@ function nextImageRight() {
         if (actualImage < totalImages) { // Check if there are images left
             let focusContainer = document.getElementById('focus-img-container');
             focusContainer.innerHTML = generateFocusImage(actualImage);
+
+            generateImageTags(actualImage);
         } else {
             // Nothing should happen
         }
