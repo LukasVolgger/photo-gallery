@@ -132,10 +132,13 @@ function searchFunction() {
             for (let j = 0; j < images[i].tags.length; j++) {
                 if (images[i].tags[j].toLowerCase().includes(searchInput)) {
                     filteredImages.push(images[i]);
-                } else {
-                    container.innerHTML = generateNoImagesFoundHTML();
                 }
             }
+        }
+
+        // When no image was found
+        if (filteredImages.length < 1) {
+            container.innerHTML = generateNoImagesFoundHTML();
         }
 
         totalFilteredImages = filteredImages.length; // Update total images

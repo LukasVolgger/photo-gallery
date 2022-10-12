@@ -130,7 +130,7 @@ let images = [{
     },
     {
         path: './assets/img/gallery/waterfall.jpg',
-        tags: ['nature', 'landscape', 'waterfall', 'water']
+        tags: ['nature', 'landscape', 'waterfall']
     }
 ];
 
