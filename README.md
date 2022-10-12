@@ -30,11 +30,11 @@ Here is an overview of the most important functions of the project. Click on the
 
 <h2 id="preview">Preview</h2>
 
-![This is an image](/img/preview/gallery_preview.png)
+![This is an image](./assets/img/preview/preview_1.png)
 
 ---
 
-![This is an image](/img/preview/focus_img_preview.png)
+![This is an image](./assets/img/preview/preview_2.png)
 
 <h2 id="installation">Installation</h2>
 Follow these steps to install/test the project.
