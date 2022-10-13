@@ -2,6 +2,7 @@ let totalImages = images.length;
 let actualImage;
 let totalFilteredImages;
 let actualFilteredImage;
+let searchImages = false;
 
 /**
  * Generates the static HTML page and the gallery images
@@ -198,6 +199,8 @@ function searchFunction(search) {
 
         renderSearchResult(container);
     }
+
+    searchImages = true;
 }
 
 /**
@@ -206,6 +209,8 @@ function searchFunction(search) {
 function closeSearch() {
     document.getElementById('search-input').value = '';
     render();
+
+    searchImages = false;
 }
 
 /**
@@ -251,3 +256,28 @@ function shuffle(array) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// Track user keyboard
+window.addEventListener('keydown', (e) => {
+    console.log(e);
+
+    if (e.key == 'Escape') {
+        closeImageFocus();
+    }
+
+    if (e.key == 'ArrowLeft' && !searchImages) {
+        nextImageLeft();
+    }
+
+    if (e.key == 'ArrowLeft' && searchImages) {
+        nextFilteredImageLeft();
+    }
+
+    if (e.key == 'ArrowRight' && !searchImages) {
+        nextImageRight();
+    }
+
+    if (e.key == 'ArrowRight' && searchImages) {
+        nextFilteredImageRight();
+    }
+});
