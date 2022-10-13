@@ -150,25 +150,35 @@ main {
 
 .tags-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
     gap: 8px;
     position: absolute;
-    left: 16px;
-    bottom: 16px;
+    bottom: 32px;
     z-index: 4;
 }
 
-.tag {
+.tag-btn {
+    font-family: 'Comforter';
+    color: white;
     font-size: 32px;
     padding: 8px;
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.tag-btn:hover {
+    filter: invert(50%);
+    background-color: rgba(192, 192, 192, 0.2);
 }
 
 .focus-img {
     position: relative;
     max-width: 80vw;
-    max-height: 90vh;
+    max-height: 70vh;
     cursor: unset;
     z-index: 3;
 }

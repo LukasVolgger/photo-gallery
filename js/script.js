@@ -157,17 +157,32 @@ function closeImageFocus() {
 /**
  * Filters all images based on the user input and displays the result
  */
-function searchFunction() {
+function searchFunction(search) {
     let searchInput = document.getElementById('search-input').value.toLowerCase();
+    let container = document.getElementById('img-container');
+    filteredImages = [];
+    container.innerHTML = '';
 
-    if (!searchInput.length == 0) {
-        filteredImages = [];
+    if (search) { // Call function from image tags when image is open
 
-        // Get container and clear it first
-        let container = document.getElementById('img-container');
-        container.innerHTML = '';
+        for (let i = 0; i < images.length; i++) {
+            for (let j = 0; j < images[i].tags.length; j++) {
+                if (images[i].tags[j].toLowerCase().includes(search)) {
+                    filteredImages.push(images[i]);
+                }
+            }
+        }
 
-        // Iterate through array and generate items if the array includes the searchInput
+        // When no image was found
+        if (filteredImages.length < 1) {
+            container.innerHTML = generateNoImagesFoundHTML();
+        }
+
+        renderSearchResult(container);
+        closeImageFocus();
+
+    } else if (!searchInput.length == 0) { // Use search input
+
         for (let i = 0; i < images.length; i++) {
             for (let j = 0; j < images[i].tags.length; j++) {
                 if (images[i].tags[j].toLowerCase().includes(searchInput)) {
@@ -181,14 +196,7 @@ function searchFunction() {
             container.innerHTML = generateNoImagesFoundHTML();
         }
 
-        totalFilteredImages = filteredImages.length; // Update total images
-
-        // Render filtered images
-        for (let k = 0; k < filteredImages.length; k++) {
-            container.innerHTML += generateFilteredImgHTML(k);
-        }
-
-        document.getElementById('close-search-btn').style = 'display: flex'; // Make close btn visible
+        renderSearchResult(container);
     }
 }
 
@@ -198,6 +206,21 @@ function searchFunction() {
 function closeSearch() {
     document.getElementById('search-input').value = '';
     render();
+}
+
+/**
+ * Displays the search result
+ * @param {Object} container 
+ */
+function renderSearchResult(container) {
+    totalFilteredImages = filteredImages.length; // Update total images
+
+    // Render filtered images
+    for (let i = 0; i < filteredImages.length; i++) {
+        container.innerHTML += generateFilteredImgHTML(i);
+    }
+
+    document.getElementById('close-search-btn').style = 'display: flex'; // Make close btn visible
 }
 
 /**
