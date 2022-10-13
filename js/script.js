@@ -3,6 +3,10 @@ let actualImage;
 let totalFilteredImages;
 let actualFilteredImage;
 let searchImages = false;
+let xDown = null;
+let yDown = null;
+
+// ########################################################################## Main
 
 /**
  * Generates the static HTML page and the gallery images
@@ -256,6 +260,53 @@ function shuffle(array) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// ########################################################################## Touch control
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+function getTouches(evt) {
+    return evt.touches || // Browser API
+        evt.originalEvent.touches; // jQuery
+}
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    let xUp = evt.touches[0].clientX;
+    let yUp = evt.touches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) { // Most significant
+        if (xDiff > 0) {
+            nextImageRight();
+        } else {
+            nextImageLeft();
+        }
+    } else {
+        if (yDiff > 0) {
+            // Down swipe
+        } else {
+            // UP swipe
+        }
+    }
+
+    //Reset values
+    xDown = null;
+    yDown = null;
+};
+
+// ########################################################################## Keyboard control
 
 // Track user keyboard
 window.addEventListener('keydown', (e) => {
