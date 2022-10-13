@@ -26,13 +26,14 @@ function generateImages() {
 
 /**
  * Generates the images tags
+ * @param {Array} imgPool The array from which the tags should be generated
  * @param {integer} i Image counter
  */
-function generateImageTags(i) {
+function generateImageTags(imgPool, i) {
     let container = document.getElementById(`tags-container-${i}`);
 
-    for (let j = 0; j < images[i].tags.length; j++) {
-        container.innerHTML += generateImageTagsHTML(i, j);
+    for (let j = 0; j < imgPool[i].tags.length; j++) {
+        container.innerHTML += generateImageTagsHTML(imgPool, i, j);
     }
 }
 
@@ -48,7 +49,7 @@ function openImage(i) {
     focusContainer.innerHTML = '';
     focusContainer.innerHTML += generateFocusImage(i);
 
-    generateImageTags(i);
+    generateImageTags(images, i);
 }
 
 /**
@@ -63,7 +64,7 @@ function openFilteredImage(i) {
     focusContainer.innerHTML = '';
     focusContainer.innerHTML += generateFilteredFocusImage(i);
 
-    generateImageTags(i);
+    generateImageTags(filteredImages, i);
 }
 
 /**
@@ -87,7 +88,7 @@ function nextImageLeft() {
             focusContainer.innerHTML = '';
             focusContainer.innerHTML += generateFocusImage(actualImage);
 
-            generateImageTags(actualImage);
+            generateImageTags(images, actualImage);
         }
     }
 }
@@ -104,7 +105,7 @@ function nextFilteredImageLeft() {
             focusContainer.innerHTML = '';
             focusContainer.innerHTML += generateFilteredFocusImage(actualFilteredImage);
 
-            generateImageTags(actualFilteredImage);
+            generateImageTags(filteredImages, actualFilteredImage);
         }
     }
 }
@@ -120,7 +121,7 @@ function nextImageRight() {
             let focusContainer = document.getElementById('focus-img-container');
             focusContainer.innerHTML = generateFocusImage(actualImage);
 
-            generateImageTags(actualImage);
+            generateImageTags(images, actualImage);
         }
     }
 }
@@ -136,7 +137,7 @@ function nextFilteredImageRight() {
             let focusContainer = document.getElementById('focus-img-container');
             focusContainer.innerHTML = generateFilteredFocusImage(actualFilteredImage);
 
-            generateImageTags(actualFilteredImage);
+            generateImageTags(filteredImages, actualFilteredImage);
         }
     }
 }

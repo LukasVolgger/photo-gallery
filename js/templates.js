@@ -43,9 +43,9 @@ function generateGalleryImgHTML(i) {
  * Generates HTML code
  * @returns HTML
  */
-function generateImageTagsHTML(i, j) {
+function generateImageTagsHTML(imgPool, i, j) {
     return `
-        <span class="tag">${capitalizeFirstLetter(images[i].tags[j])}</span>
+        <span class="tag">${capitalizeFirstLetter(imgPool[i].tags[j])}</span>
     `;
 }
 
