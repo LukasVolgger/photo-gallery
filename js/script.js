@@ -261,6 +261,21 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// ########################################################################## Loading screen
+document.onreadystatechange = () => {
+    let state = document.readyState;
+
+    if (state == 'interactive') {
+        document.getElementById('body').style = 'overflow: hidden';
+        document.getElementById('loading-screen').classList.remove('d-none');
+    } else if (state == 'complete') {
+        setTimeout(function() {
+            document.getElementById('body').style = 'overflow: auto';
+            document.getElementById('loading-screen').classList.add('d-none');
+        }, 1000);
+    }
+}
+
 // ########################################################################## Touch control
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
