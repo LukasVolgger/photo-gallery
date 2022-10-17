@@ -32,7 +32,7 @@ function generateImages() {
 /**
  * Generates the images tags
  * @param {Array} imgPool The array from which the tags should be generated
- * @param {integer} i Image counter
+ * @param {number} i Image counter
  */
 function generateImageTags(imgPool, i) {
     let container = document.getElementById(`tags-container-${i}`);
@@ -44,7 +44,7 @@ function generateImageTags(imgPool, i) {
 
 /**
  * Opens the selected image and shows it in full screen
- * @param {integer} i Image counter 
+ * @param {number} i Image counter 
  */
 function openImage(i) {
     showImageFocus();
@@ -59,7 +59,7 @@ function openImage(i) {
 
 /**
  * Opens the selected image and shows it in full screen
- * @param {integer} i Image counter 
+ * @param {number} i Image counter 
  */
 function openFilteredImage(i) {
     showImageFocus();
