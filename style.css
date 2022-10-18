@@ -137,6 +137,19 @@ main {
     border-radius: 8px;
 }
 
+.fade-in {
+    animation: fadeIn ease 550ms;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .gallery-img-container:hover {
     filter: brightness(1.5);
     border: solid 1px silver;

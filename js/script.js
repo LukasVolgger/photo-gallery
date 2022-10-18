@@ -303,7 +303,7 @@ function handleTouchMove(evt) {
     let yDiff = yDown - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) { // Most significant
-        if (xDiff > 0) {
+        if (xDiff > 20) {
             nextImageRight();
         } else {
             nextImageLeft();

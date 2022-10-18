@@ -68,7 +68,7 @@ function generateFilteredImgHTML(i) {
 function generateFocusImage(image) {
     return `
         <div class="focus-img-wrapper">
-            <img src="${images[image].path}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
+            <img src="${images[image].path}" alt="Focus-Image" class="focus-img  fade-in" id="focus-img-${image}" onclick="event.stopPropagation()">
             <div class="tags-container" id="tags-container-${image}"></div>
             <button class="btn icon-container close-icon" onclick="closeImageFocus()">
                 <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
@@ -90,7 +90,7 @@ function generateFocusImage(image) {
 function generateFilteredFocusImage(image) {
     return `
         <div class="focus-img-wrapper">
-            <img src="${filteredImages[image].path}" alt="Focus-Image" class="focus-img" id="focus-img-${image}" onclick="event.stopPropagation()">
+            <img src="${filteredImages[image].path}" alt="Focus-Image" class="focus-img fade-in" id="focus-img-${image}" onclick="event.stopPropagation()">
             <div class="tags-container" id="tags-container-${image}"></div>
             <button class="btn icon-container close-icon" onclick="closeImageFocus()">
                 <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
