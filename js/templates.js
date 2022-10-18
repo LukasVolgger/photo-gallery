@@ -12,7 +12,7 @@ function generateStaticHTML() {
             <div class="header-subcontainer">
                 <form onsubmit="return false" id="search-bar-container">
                     <button type="submit" class="btn" onclick="searchFunction()"><img src="./assets/img/icons/search.svg" alt="search" id="search-icon" class="icons" title="Search"></button>
-                    <input type="text" placeholder="Search (Animals, Plants, ...)" class="element-height" id="search-input">
+                    <input type="text" placeholder="Search by tags" class="element-height" id="search-input">
                     <button class="btn" id="close-search-btn" onclick="closeSearch()"><img src="./assets/img/icons/close_search.svg" alt="Close Search" class="icons" title="Close Search"></button>
                 </form>
             </div>
