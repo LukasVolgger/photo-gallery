@@ -137,6 +137,7 @@ main {
     cursor: pointer;
     border: solid 1px transparent;
     border-radius: 8px;
+    transition: all 75ms ease-in-out;
 }
 
 .fade-in {
@@ -326,10 +327,15 @@ main {
     left: 0;
     z-index: 999;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #252525;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.loading-text {
+    font-size: 32px;
+    color: #787878;
 }
 
 svg {
@@ -341,7 +347,7 @@ svg {
 }
 
 .stroke-still {
-    stroke: #232323;
+    stroke: #313131;
 }
 
 .stroke-animation {
