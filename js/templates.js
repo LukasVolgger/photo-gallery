@@ -73,10 +73,10 @@ function generateFocusImage(image) {
             <button class="btn icon-container close-icon" onclick="closeImageFocus()">
                 <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
             </button>
-            <button class="btn icon-container left-arrow-icon" onclick="nextImageLeft()">
+            <button class="btn icon-container left-arrow-icon" onclick="nextImageLeft(); event.stopPropagation()">
                 <img src="./assets/img/icons/left_arrow.svg" alt="Arrow Left" title="Left">
             </button>
-            <button class="btn icon-container right-arrow-icon" onclick="nextImageRight()">
+            <button class="btn icon-container right-arrow-icon" onclick="nextImageRight(); event.stopPropagation()">
                 <img src="./assets/img/icons/right_arrow.svg" alt="Arrow Right" title="Right">
             </button>
         </div>
@@ -95,10 +95,10 @@ function generateFilteredFocusImage(image) {
             <button class="btn icon-container close-icon" onclick="closeImageFocus()">
                 <img src="./assets/img/icons/close.svg" alt="Close icon" title="Close">
             </button>
-            <button class="btn icon-container left-arrow-icon" onclick="nextFilteredImageLeft()">
+            <button class="btn icon-container left-arrow-icon" onclick="nextFilteredImageLeft(); event.stopPropagation()">
                 <img src="./assets/img/icons/left_arrow.svg" alt="Arrow Left" title="Left">
             </button>
-            <button class="btn icon-container right-arrow-icon" onclick="nextFilteredImageRight()">
+            <button class="btn icon-container right-arrow-icon" onclick="nextFilteredImageRight(); event.stopPropagation()">
                 <img src="./assets/img/icons/right_arrow.svg" alt="Arrow Right" title="Right">
             </button>
         </div>
