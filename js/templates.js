@@ -67,7 +67,7 @@ function generateFilteredImgHTML(i) {
  */
 function generateFocusImage(image) {
     return `
-        <div class="focus-img-wrapper">
+        <div class="focus-img-wrapper" onclick="closeImageFocus()">
             <img src="${images[image].path}" alt="Focus-Image" class="focus-img  fade-in" id="focus-img-${image}" onclick="event.stopPropagation()">
             <div class="tags-container" id="tags-container-${image}"></div>
             <button class="btn icon-container close-icon" onclick="closeImageFocus()">
