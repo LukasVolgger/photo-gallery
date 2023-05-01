@@ -66,4 +66,4 @@ index.html
 
 <h2 id="license">License</h2>
 
-<a href="https://github.com/LukasVolgger/photo-gallery/blob/main/LICENSE">![APM](https://img.shields.io/apm/l/vim-mode?label=License&style=for-the-badge)</a>
+<a href="https://github.com/LukasVolgger/photo-gallery/blob/main/LICENSE.md">![APM](https://img.shields.io/apm/l/vim-mode?label=License&style=for-the-badge)</a>
