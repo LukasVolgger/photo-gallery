@@ -57,7 +57,7 @@ All you need is a web browser like one of the following:
 Clone the source code or download the repository on your local computer by clicking the **Code** button.
 
 ``` bash
-git clone https://github.com/LukasVolgger/sample.git
+git clone https://github.com/LukasVolgger/photo-gallery.git
 ```
 
 ### 3. Start the Application
